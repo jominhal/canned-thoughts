@@ -14,6 +14,7 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Jominhal Pagapulaan — Canned Thoughts">
 <meta name="twitter:description" content="Stories, confessions, and 3 a.m. thoughts by Jominhal “Jomz” Pagapulaan. Podcast coming soon.">
+<script>document.documentElement.classList.add('js')</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -50,121 +51,192 @@
 </script>
 <style>
   :root{
-    --ink:#0a0c11; --ink2:#10131b; --card:#151924; --line:#262c3d;
-    --paper:#ece7db; --dim:#aaa394; --faint:#7e7869;
-    --accent:#e8a33d; --accent2:#c96f2e; --glow:rgba(232,163,61,.16);
+    --ink:#08090f; --ink2:#0e1017; --card:#141824; --line:#272d40;
+    --paper:#f2ecdd; --dim:#b3ab99; --faint:#847d6d;
+    --amber:#e8a33d; --ember:#c96f2e; --coral:#ff6a4d; --violet:#8fa3ff; --mint:#5fd0a5; --pink:#ff9ecb;
+    --glow:rgba(232,163,61,.16);
     --serif: Georgia, "Times New Roman", serif;
     --sans: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
-  body{background:
-      radial-gradient(1100px 500px at 85% -5%, rgba(201,111,46,.14), transparent 60%),
-      radial-gradient(900px 480px at -10% 30%, rgba(232,163,61,.07), transparent 55%),
-      var(--ink);
-    color:var(--paper);font-family:var(--sans);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-  a{color:var(--accent);text-decoration:none}
-  a:hover{text-decoration:underline}
-  a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
-  .wrap{max-width:880px;margin:0 auto;padding:0 22px}
+  body{background:var(--ink);color:var(--paper);font-family:var(--sans);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;position:relative}
 
-  header{position:sticky;top:0;background:rgba(10,12,17,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);z-index:20}
-  .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:12px;flex-wrap:wrap}
+  /* ---------- LIVING BACKGROUND ---------- */
+  .bgfx{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none}
+  .bgfx .aurora{position:absolute;border-radius:50%;filter:blur(90px);opacity:.5;will-change:transform}
+  .bgfx .a1{width:560px;height:560px;left:-140px;top:-160px;background:radial-gradient(circle,rgba(201,111,46,.5),transparent 65%);animation:drift1 26s ease-in-out infinite alternate}
+  .bgfx .a2{width:520px;height:520px;right:-160px;top:12%;background:radial-gradient(circle,rgba(143,163,255,.34),transparent 65%);animation:drift2 32s ease-in-out infinite alternate}
+  .bgfx .a3{width:460px;height:460px;left:32%;bottom:-220px;background:radial-gradient(circle,rgba(255,106,77,.26),transparent 65%);animation:drift1 38s ease-in-out infinite alternate-reverse}
+  @keyframes drift1{from{transform:translate(0,0) scale(1)}to{transform:translate(70px,46px) scale(1.14)}}
+  @keyframes drift2{from{transform:translate(0,0) scale(1.08)}to{transform:translate(-64px,60px) scale(.96)}}
+  .bgfx .mote{position:absolute;bottom:-4vh;border-radius:50%;background:radial-gradient(circle,rgba(242,236,221,.8),transparent 70%);opacity:0;animation:rise linear infinite}
+  @keyframes rise{0%{transform:translateY(0) translateX(0) scale(.7);opacity:0}12%{opacity:.55}88%{opacity:.4}100%{transform:translateY(-106vh) translateX(4vw) scale(1.5);opacity:0}}
+
+  a{color:var(--amber);text-decoration:none}
+  a:hover{text-decoration:underline}
+  a:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
+  .wrap{max-width:900px;margin:0 auto;padding:0 22px}
+
+  /* ---------- REVEAL ---------- */
+  .js .rv{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
+  .js .rv.in{opacity:1;transform:none}
+  .js .rv.d1{transition-delay:.08s}.js .rv.d2{transition-delay:.16s}.js .rv.d3{transition-delay:.24s}
+
+  /* ---------- HEADER ---------- */
+  header{position:sticky;top:0;background:rgba(8,9,15,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);z-index:20}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:10px 0;gap:12px;flex-wrap:wrap}
   .brand{font-weight:800;letter-spacing:.14em;font-size:.95rem;color:var(--paper)}
-  .brand span{color:var(--accent)}
-  .nav nav{display:flex;gap:20px;font-size:.9rem}
-  .nav nav a{color:var(--dim)}
-  .nav nav a:hover{color:var(--paper);text-decoration:none}
+  .brand span{background:linear-gradient(90deg,var(--amber),var(--coral));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .nav nav{display:flex;gap:6px;font-size:.9rem;flex-wrap:wrap}
+  .nav nav a{color:var(--dim);padding:10px 10px;border-radius:8px}
+  .nav nav a:hover{color:var(--paper);background:rgba(232,163,61,.08);text-decoration:none}
 
   /* ---------- HERO ---------- */
-  .hero{padding:78px 0 30px;position:relative}
-  .canstage{position:relative;width:120px;height:120px;margin-bottom:8px}
-  .bigcan{font-size:5.2rem;line-height:1;display:inline-block;animation:bob 5s ease-in-out infinite;filter:drop-shadow(0 18px 30px rgba(0,0,0,.55))}
-  .vapor{position:absolute;left:52px;top:-14px;width:10px;height:10px;border-radius:50%;
-    background:radial-gradient(circle,rgba(236,231,219,.75),transparent 70%);opacity:0;animation:rise 4.2s ease-in infinite}
-  .vapor.v2{left:66px;animation-delay:1.4s}
-  .vapor.v3{left:44px;animation-delay:2.7s}
-  @keyframes rise{0%{transform:translateY(6px) scale(.6);opacity:0}25%{opacity:.85}100%{transform:translateY(-52px) translateX(10px) scale(2.1);opacity:0}}
-  @keyframes bob{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-9px) rotate(2deg)}}
-  h1{font-family:var(--serif);font-weight:600;font-size:clamp(2.6rem,7vw,4.2rem);line-height:1.08;margin:14px 0 10px}
-  h1 .thin{color:var(--accent)}
-  .byline{color:var(--dim);font-size:1.05rem;margin-bottom:34px}
+  .hero{padding:74px 0 26px;position:relative}
+  .canstage{position:relative;width:150px;height:196px;margin-bottom:6px}
+  .can{position:absolute;left:8px;bottom:0;width:118px;height:150px;border-radius:16px 16px 20px 20px;
+    background:linear-gradient(100deg,#8f8a7c 0%,#e9e4d4 22%,#b9b2a0 48%,#f4efdf 72%,#98927f 100%);
+    box-shadow:inset 0 -18px 26px rgba(0,0,0,.28), inset 0 10px 14px rgba(255,255,255,.35), 0 30px 44px -18px rgba(0,0,0,.75);
+    animation:bob 5.5s ease-in-out infinite}
+  .can::before{content:"";position:absolute;left:6px;right:6px;top:-9px;height:18px;border-radius:50%;
+    background:radial-gradient(ellipse at 50% 38%,#fdfaf0 0%,#cfc9b8 55%,#97917e 100%);box-shadow:inset 0 -3px 6px rgba(0,0,0,.25)}
+  .can::after{content:"";position:absolute;left:0;right:0;bottom:12px;height:6px;border-radius:3px;background:linear-gradient(90deg,transparent,rgba(0,0,0,.22),transparent)}
+  .can .label{position:absolute;left:0;right:0;top:44px;padding:10px 6px;text-align:center;color:#221503;
+    background:linear-gradient(135deg,var(--amber),var(--coral));box-shadow:0 4px 14px rgba(0,0,0,.3)}
+  .can .label b{display:block;font-size:.82rem;letter-spacing:.18em;line-height:1.25}
+  .can .label small{font-size:.56rem;letter-spacing:.3em;font-weight:700;opacity:.75}
+  .canstage .shadow{position:absolute;left:2px;bottom:-14px;width:132px;height:20px;border-radius:50%;background:radial-gradient(ellipse,rgba(232,163,61,.4),transparent 70%);filter:blur(4px);animation:shadowpulse 5.5s ease-in-out infinite}
+  @keyframes shadowpulse{0%,100%{transform:scaleX(1);opacity:.8}50%{transform:scaleX(.86);opacity:.5}}
+  .vapor{position:absolute;bottom:158px;width:12px;height:12px;border-radius:50%;background:radial-gradient(circle,rgba(242,236,221,.85),transparent 70%);opacity:0;animation:vaporrise 4.4s ease-in infinite}
+  .vapor.v1{left:44px}.vapor.v2{left:66px;animation-delay:1.5s}.vapor.v3{left:55px;animation-delay:2.9s;width:9px;height:9px}
+  @keyframes vaporrise{0%{transform:translateY(8px) translateX(0) scale(.55);opacity:0}22%{opacity:.9}100%{transform:translateY(-64px) translateX(16px) scale(2.3);opacity:0}}
+  @keyframes bob{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-10px) rotate(2deg)}}
+  .floatchip{position:absolute;font-family:var(--serif);font-style:italic;font-size:.86rem;color:var(--dim);
+    border:1px solid var(--line);background:rgba(20,24,36,.75);backdrop-filter:blur(4px);padding:5px 13px;border-radius:999px;animation:floaty 7s ease-in-out infinite;white-space:nowrap}
+  .floatchip.c1{right:16%;top:64px;color:var(--amber);border-color:rgba(232,163,61,.4)}
+  .floatchip.c2{right:4%;top:150px;animation-delay:1.6s;color:var(--violet);border-color:rgba(143,163,255,.4)}
+  .floatchip.c3{right:22%;top:224px;animation-delay:3s;color:var(--coral);border-color:rgba(255,106,77,.4)}
+  .floatchip.c4{right:2%;top:262px;animation-delay:.8s;color:var(--mint);border-color:rgba(95,208,165,.35)}
+  @keyframes floaty{0%,100%{transform:translateY(0) rotate(-1.5deg)}50%{transform:translateY(-11px) rotate(1.5deg)}}
+  @media (max-width:700px){.floatchip.c2,.floatchip.c4{display:none}.floatchip.c1{right:4%}.floatchip.c3{right:8%}}
+  h1{font-family:var(--serif);font-weight:600;font-size:clamp(2.7rem,7.5vw,4.4rem);line-height:1.06;margin:16px 0 12px}
+  h1 .grad{background:linear-gradient(92deg,var(--amber) 10%,var(--coral) 45%,var(--violet) 90%);background-size:220% 100%;
+    -webkit-background-clip:text;background-clip:text;color:transparent;animation:hueflow 9s ease-in-out infinite alternate}
+  @keyframes hueflow{from{background-position:0% 0}to{background-position:100% 0}}
+  .byline{color:var(--dim);font-size:1.06rem;margin-bottom:32px}
   .byline a{font-weight:700}
-  .manifesto{font-family:var(--serif);font-size:1.17rem;max-width:650px}
+  .manifesto{font-family:var(--serif);font-size:1.17rem;max-width:660px;background:linear-gradient(180deg,rgba(20,24,36,.72),rgba(14,16,23,.72));
+    border:1px solid var(--line);border-left:4px solid;border-image:linear-gradient(180deg,var(--amber),var(--coral),var(--violet)) 1;
+    border-radius:0 16px 16px 0;padding:28px 30px;backdrop-filter:blur(6px)}
   .manifesto p{margin-bottom:1.05em}
-  .cta{display:flex;gap:14px;margin-top:36px;flex-wrap:wrap}
-  .btn{display:inline-block;padding:12px 24px;border-radius:999px;font-weight:700;font-size:.95rem;border:1px solid var(--accent);transition:transform .18s ease, filter .18s ease}
-  .btn.solid{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#181205;border:none;box-shadow:0 10px 26px -10px var(--accent2)}
-  .btn.ghost{color:var(--paper);border-color:var(--line)}
+  .manifesto p:last-child{margin-bottom:0}
+  .cta{display:flex;gap:14px;margin-top:34px;flex-wrap:wrap}
+  .btn{display:inline-block;padding:13px 26px;border-radius:999px;font-weight:700;font-size:.95rem;border:1px solid var(--amber);transition:transform .18s ease, filter .18s ease, box-shadow .18s ease;position:relative;overflow:hidden}
+  .btn.solid{background:linear-gradient(135deg,var(--amber),var(--coral));color:#221503;border:none;box-shadow:0 12px 30px -10px rgba(255,106,77,.55)}
+  .btn.ghost{color:var(--paper);border-color:var(--line);background:rgba(20,24,36,.5)}
   .btn:hover{text-decoration:none;filter:brightness(1.1);transform:translateY(-2px)}
 
   /* ---------- MARQUEE ---------- */
-  .marquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:58px;overflow:hidden;white-space:nowrap;padding:12px 0;
+  .marquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:56px;overflow:hidden;white-space:nowrap;padding:13px 0;
     -webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
-  .marquee .track{display:inline-block;animation:scrollx 30s linear infinite;color:var(--faint);letter-spacing:.28em;font-size:.78rem;font-weight:700;text-transform:uppercase}
+  .marquee .track{display:inline-block;animation:scrollx 26s linear infinite;letter-spacing:.26em;font-size:.8rem;font-weight:800;text-transform:uppercase;
+    background:linear-gradient(90deg,var(--amber),var(--coral),var(--violet),var(--mint),var(--amber));background-size:300% 100%;-webkit-background-clip:text;background-clip:text;color:transparent}
   @keyframes scrollx{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
-  section{padding:58px 0;border-top:1px solid var(--line)}
+  section{padding:60px 0;border-top:1px solid var(--line)}
   section:first-of-type{border-top:none}
-  h2{font-family:var(--serif);font-size:1.95rem;font-weight:600;margin-bottom:8px}
-  .kicker{letter-spacing:.22em;font-size:.72rem;font-weight:800;color:var(--accent);text-transform:uppercase;margin-bottom:10px}
-  .sub{color:var(--dim);max-width:620px;margin-bottom:30px}
+  h2{font-family:var(--serif);font-size:2rem;font-weight:600;margin-bottom:8px}
+  .kicker{letter-spacing:.22em;font-size:.72rem;font-weight:800;text-transform:uppercase;margin-bottom:10px;
+    background:linear-gradient(90deg,var(--amber),var(--coral));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .sub{color:var(--dim);max-width:640px;margin-bottom:30px}
 
   /* ---------- PIECES ---------- */
-  .piece{background:linear-gradient(180deg,var(--card),var(--ink2));border:1px solid var(--line);border-radius:16px;padding:36px 34px;margin-bottom:26px;transition:transform .25s ease, border-color .25s ease, box-shadow .25s ease}
-  .piece:hover{transform:translateY(-4px);border-color:rgba(232,163,61,.45);box-shadow:0 24px 44px -22px rgba(0,0,0,.8)}
-  .piece h3{font-family:var(--serif);font-size:1.5rem;margin-bottom:4px}
+  .piece{position:relative;background:linear-gradient(180deg,var(--card),var(--ink2));border:1px solid var(--line);border-radius:18px;padding:38px 36px;margin-bottom:28px;overflow:hidden;
+    transition:transform .25s ease, border-color .25s ease, box-shadow .25s ease}
+  .piece::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--amber),var(--coral),var(--violet))}
+  .piece:hover{transform:translateY(-4px);border-color:rgba(232,163,61,.5);box-shadow:0 26px 48px -22px rgba(0,0,0,.85),0 0 0 1px rgba(232,163,61,.12)}
+  .piece h3{font-family:var(--serif);font-size:1.55rem;margin-bottom:4px}
+  .piece .stamp{display:inline-block;transform:rotate(-2.5deg);border:1.5px dashed rgba(232,163,61,.55);color:var(--amber);
+    font-size:.7rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;padding:3px 10px;border-radius:6px;margin-bottom:14px}
   .piece .meta{color:var(--faint);font-size:.85rem;margin-bottom:20px}
-  .piece .body{font-family:var(--serif);font-size:1.06rem;color:#ded7c7}
+  .piece .body{font-family:var(--serif);font-size:1.07rem;color:#e3dcc9}
   .piece .body p{margin-bottom:1em}
   .piece .body p:last-child{margin-bottom:0}
   .piece .src{margin-top:22px;font-size:.9rem}
 
   /* ---------- SHELF ---------- */
-  .shelf{display:grid;grid-template-columns:repeat(auto-fit,minmax(225px,1fr));gap:16px}
-  .tile{background:var(--ink2);border:1px solid var(--line);border-radius:14px;padding:24px;transition:transform .22s ease, border-color .22s ease}
-  .tile:hover{transform:translateY(-4px);border-color:rgba(232,163,61,.45)}
-  .tile .emoji{font-size:1.6rem;margin-bottom:10px}
-  .tile h3{font-size:1.06rem;margin-bottom:6px}
+  .shelf{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
+  .tile{--hue:var(--amber);background:linear-gradient(180deg,var(--card),var(--ink2));border:1px solid var(--line);border-radius:16px;padding:26px;transition:transform .22s ease, border-color .22s ease, box-shadow .22s ease}
+  .tile:nth-child(2){--hue:var(--coral)}.tile:nth-child(3){--hue:var(--violet)}.tile:nth-child(4){--hue:var(--mint)}.tile:nth-child(5){--hue:var(--pink)}.tile:nth-child(6){--hue:var(--amber)}
+  .tile:hover{transform:translateY(-5px) rotate(-.6deg);border-color:var(--hue);box-shadow:0 20px 36px -18px rgba(0,0,0,.8)}
+  .tile .emoji{font-size:1.5rem;margin-bottom:12px;width:52px;height:52px;display:flex;align-items:center;justify-content:center;border-radius:50%;
+    background:color-mix(in srgb,var(--hue) 14%, transparent);border:1px solid color-mix(in srgb,var(--hue) 45%, transparent)}
+  .tile h3{font-size:1.07rem;margin-bottom:6px}
   .tile p{color:var(--dim);font-size:.93rem}
 
   /* ---------- PODCAST ---------- */
-  .podcast{background:linear-gradient(160deg,#1d150c,#11141d 65%);border:1px solid rgba(232,163,61,.35);border-radius:16px;padding:38px 34px;position:relative;overflow:hidden}
-  .podcast::after{content:"";position:absolute;right:-70px;top:-70px;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,var(--glow),transparent 70%)}
-  .soon{display:inline-block;background:var(--accent);color:#181205;font-weight:800;font-size:.72rem;letter-spacing:.16em;padding:5px 12px;border-radius:999px;text-transform:uppercase;margin-bottom:16px;animation:pulse 2.6s ease-in-out infinite}
-  @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(232,163,61,.45)}50%{box-shadow:0 0 0 9px rgba(232,163,61,0)}}
-  .podcast h3{font-family:var(--serif);font-size:1.7rem;margin-bottom:10px}
-  .podcast p{color:var(--dim);max-width:580px;position:relative;z-index:1}
-  .podcast .signoff{font-family:var(--serif);font-style:italic;color:var(--paper);margin-top:16px;font-size:1.1rem}
+  .podcast{background:linear-gradient(160deg,#241610,#10121c 65%);border:1px solid rgba(232,163,61,.4);border-radius:18px;padding:40px 36px;position:relative;overflow:hidden}
+  .podcast::after{content:"";position:absolute;right:-70px;top:-70px;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,var(--glow),transparent 70%)}
+  .soon{display:inline-block;background:linear-gradient(135deg,var(--amber),var(--coral));color:#221503;font-weight:800;font-size:.72rem;letter-spacing:.16em;padding:6px 13px;border-radius:999px;text-transform:uppercase;margin-bottom:16px;animation:pulse 2.6s ease-in-out infinite}
+  @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(255,106,77,.45)}50%{box-shadow:0 0 0 10px rgba(255,106,77,0)}}
+  .podcast h3{font-family:var(--serif);font-size:1.75rem;margin-bottom:10px}
+  .podcast p{color:var(--dim);max-width:600px;position:relative;z-index:1}
+  .podcast .signoff{font-family:var(--serif);font-style:italic;color:var(--paper);margin-top:16px;font-size:1.12rem}
+  .eq{display:flex;gap:5px;align-items:flex-end;height:30px;margin:20px 0 4px;position:relative;z-index:1}
+  .eq span{width:6px;border-radius:3px;background:linear-gradient(180deg,var(--amber),var(--coral));animation:eqb 1.15s ease-in-out infinite}
+  .eq span:nth-child(1){height:38%}.eq span:nth-child(2){height:74%;animation-delay:.14s}.eq span:nth-child(3){height:100%;animation-delay:.28s}
+  .eq span:nth-child(4){height:58%;animation-delay:.42s}.eq span:nth-child(5){height:86%;animation-delay:.56s}.eq span:nth-child(6){height:44%;animation-delay:.7s}
+  .eq span:nth-child(7){height:68%;animation-delay:.84s}
+  @keyframes eqb{0%,100%{transform:scaleY(.55)}50%{transform:scaleY(1)}}
+  .eq span{transform-origin:bottom}
 
   /* ---------- PEOPLE ---------- */
-  .people{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:18px}
-  .person{background:linear-gradient(180deg,var(--card),var(--ink2));border:1px solid var(--line);border-radius:16px;padding:30px}
-  .person h3{font-size:1.25rem;margin-bottom:2px}
-  .person .role{color:var(--accent);font-weight:700;font-size:.84rem;letter-spacing:.07em;text-transform:uppercase;margin-bottom:12px}
+  .people{display:grid;grid-template-columns:repeat(auto-fit,minmax(295px,1fr));gap:18px}
+  .person{background:linear-gradient(180deg,var(--card),var(--ink2));border:1px solid var(--line);border-radius:18px;padding:32px;transition:transform .25s ease,border-color .25s ease}
+  .person:hover{transform:translateY(-4px);border-color:rgba(143,163,255,.4)}
+  .person h3{font-size:1.28rem;margin-bottom:2px}
+  .person .role{font-weight:700;font-size:.84rem;letter-spacing:.07em;text-transform:uppercase;margin-bottom:12px;
+    background:linear-gradient(90deg,var(--amber),var(--coral));-webkit-background-clip:text;background-clip:text;color:transparent}
   .person p{color:var(--dim);font-size:.96rem;margin-bottom:10px}
-  .face-link{display:inline-block;border-radius:50%;line-height:0;position:relative;margin-bottom:18px}
-  .face-link img{width:132px;height:132px;border-radius:50%;object-fit:cover;border:3px solid var(--accent);transition:transform .25s ease, box-shadow .25s ease}
-  .face-link:hover img{transform:scale(1.05) rotate(-2deg);box-shadow:0 0 0 6px rgba(232,163,61,.22), 0 18px 34px -14px rgba(0,0,0,.8)}
-  .face-link .hint{position:absolute;bottom:-9px;left:50%;transform:translateX(-50%);background:var(--accent);color:#181205;font-size:.68rem;font-weight:800;letter-spacing:.08em;padding:3px 10px;border-radius:999px;text-transform:uppercase;white-space:nowrap}
-  .nova-face{width:132px;height:132px;border-radius:50%;object-fit:cover;border:3px solid #8fa3ff;display:block;margin-bottom:18px;background:#1a1430;animation:bob 6s ease-in-out infinite}
+  .halo{display:inline-block;border-radius:50%;line-height:0;position:relative;margin-bottom:20px;padding:4px;
+    background:conic-gradient(from 0deg,var(--amber),var(--coral),var(--violet),var(--mint),var(--amber));animation:spinring 9s linear infinite}
+  @keyframes spinring{to{transform:rotate(360deg)}}
+  .halo img,.halo video{border-radius:50%;display:block}
+  .face-link{position:relative}
+  .face-link img{width:132px;height:132px;object-fit:cover;transition:transform .25s ease}
+  .face-link:hover img{transform:scale(1.04)}
+  .face-link .hint{position:absolute;bottom:-9px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,var(--amber),var(--coral));color:#221503;font-size:.68rem;font-weight:800;letter-spacing:.08em;padding:3px 10px;border-radius:999px;text-transform:uppercase;white-space:nowrap}
+  .nova-face{width:132px;height:132px;object-fit:cover;background:#1a1430;animation:bob 6s ease-in-out infinite}
   .links{display:flex;flex-direction:column;gap:10px;margin-top:18px}
-  .linkchip{display:flex;align-items:center;gap:12px;border:1px solid var(--line);border-radius:12px;padding:12px 16px;color:var(--paper);font-weight:600;font-size:.95rem;transition:border-color .2s ease, transform .2s ease, background .2s ease}
-  .linkchip:hover{text-decoration:none;border-color:var(--accent);transform:translateX(4px);background:rgba(232,163,61,.06)}
+  .linkchip{display:flex;align-items:center;gap:12px;border:1px solid var(--line);border-radius:12px;padding:13px 16px;color:var(--paper);font-weight:600;font-size:.95rem;min-height:48px;transition:border-color .2s ease, transform .2s ease, background .2s ease}
+  .linkchip:hover{text-decoration:none;border-color:var(--amber);transform:translateX(5px);background:rgba(232,163,61,.07)}
   .linkchip .ic{font-size:1.15rem}
   .linkchip small{color:var(--faint);font-weight:400;margin-left:auto}
 
-  footer{border-top:1px solid var(--line);padding:38px 0 50px;color:var(--faint);font-size:.88rem}
+  footer{border-top:1px solid var(--line);padding:40px 0 52px;color:var(--faint);font-size:.88rem;position:relative}
+  footer::before{content:"";position:absolute;top:-1px;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--amber),var(--coral),var(--violet),transparent)}
   footer .row{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
-  footer .big{font-family:var(--serif);color:var(--dim);font-size:1.05rem;margin-bottom:14px}
+  footer .big{font-family:var(--serif);color:var(--dim);font-size:1.06rem;margin-bottom:14px}
 
-  @media (max-width:560px){ .hero{padding:54px 0 24px} .piece{padding:27px 21px} .podcast{padding:30px 22px} }
+  @media (max-width:560px){ .hero{padding:52px 0 22px} .piece{padding:28px 22px} .podcast{padding:32px 24px} .manifesto{padding:22px} }
   @media (prefers-reduced-motion: reduce){
-    .bigcan,.vapor,.nova-face,.soon,.marquee .track{animation:none !important}
+    .can,.vapor,.nova-face,.soon,.marquee .track,.bgfx .aurora,.bgfx .mote,.floatchip,.eq span,.halo,h1 .grad{animation:none !important}
+    .js .rv{opacity:1;transform:none;transition:none}
   }
 </style>
 </head>
 <body>
+
+<div class="bgfx" aria-hidden="true">
+  <span class="aurora a1"></span><span class="aurora a2"></span><span class="aurora a3"></span>
+  <span class="mote" style="left:8%;width:7px;height:7px;animation-duration:17s"></span>
+  <span class="mote" style="left:22%;width:5px;height:5px;animation-duration:23s;animation-delay:4s"></span>
+  <span class="mote" style="left:47%;width:8px;height:8px;animation-duration:19s;animation-delay:9s"></span>
+  <span class="mote" style="left:66%;width:5px;height:5px;animation-duration:26s;animation-delay:2s"></span>
+  <span class="mote" style="left:81%;width:7px;height:7px;animation-duration:21s;animation-delay:12s"></span>
+  <span class="mote" style="left:93%;width:4px;height:4px;animation-duration:16s;animation-delay:7s"></span>
+</div>
 
 <header>
   <div class="wrap nav">
@@ -183,13 +255,18 @@
 
   <!-- HERO / MANIFESTO -->
   <div class="hero">
+    <span class="floatchip c1" aria-hidden="true">“ingat ka.”</span>
+    <span class="floatchip c2" aria-hidden="true">esmiringhoy.</span>
+    <span class="floatchip c3" aria-hidden="true">3 a.m.</span>
+    <span class="floatchip c4" aria-hidden="true">godbwye.</span>
     <div class="canstage" aria-hidden="true">
-      <span class="vapor"></span><span class="vapor v2"></span><span class="vapor v3"></span>
-      <span class="bigcan">🥫</span>
+      <span class="vapor v1"></span><span class="vapor v2"></span><span class="vapor v3"></span>
+      <div class="can"><div class="label"><small>EST. 3 A.M.</small><b>CANNED<br>THOUGHTS</b></div></div>
+      <span class="shadow"></span>
     </div>
-    <h1>canned thoughts<span class="thin">.</span></h1>
+    <h1>canned <span class="grad">thoughts.</span></h1>
     <p class="byline">The hobby home of Canned Thoughts — written and hosted by <a href="#host">Jominhal “Jomz” Pagapulaan</a>.</p>
-    <div class="manifesto">
+    <div class="manifesto rv">
       <p>this page is where i put the thoughts that arrive at the wrong hours.</p>
       <p>the ones that show up at 3 am. in the elevator. in line for food. in the middle of a shift, when i should be thinking about work.</p>
       <p>i used to just let them pass. most of them were gone by morning.</p>
@@ -200,6 +277,7 @@
     </div>
     <div class="cta">
       <a class="btn solid" href="#cans">Read the cans</a>
+      <a class="btn ghost" href="jokes.html">😂 The joke book</a>
       <a class="btn ghost" href="https://www.facebook.com/61577532603103" target="_blank" rel="noopener">Follow on Facebook</a>
     </div>
   </div>
@@ -208,11 +286,12 @@
 
   <!-- FEATURED CANS -->
   <section id="cans" aria-labelledby="cans-h">
-    <div class="kicker">From the shelf</div>
-    <h2 id="cans-h">Featured cans</h2>
-    <p class="sub">Two pieces that say what this place is. The full archive lives on the Facebook Page — new cans open there first; the ones that last get shelved here.</p>
+    <div class="kicker rv">From the shelf</div>
+    <h2 id="cans-h" class="rv">Featured cans</h2>
+    <p class="sub rv">Two pieces that say what this place is. The full archive lives on the Facebook Page — new cans open there first; the ones that last get shelved here.</p>
 
-    <article class="piece">
+    <article class="piece rv">
+      <span class="stamp">Can № 1 · Word can</span>
       <h3>Goodbye</h3>
       <p class="meta">By Jominhal Pagapulaan · Canned Thoughts, October 20, 2026</p>
       <div class="body">
@@ -241,7 +320,8 @@
       <p class="src"><a href="https://www.facebook.com/61577532603103/posts/122134332938917753" target="_blank" rel="noopener">Read it on Facebook →</a></p>
     </article>
 
-    <article class="piece">
+    <article class="piece rv">
+      <span class="stamp">Can № 2 · Word can</span>
       <h3>Esmiringhoy</h3>
       <p class="meta">By Jominhal Pagapulaan · Canned Thoughts, October 21, 2026</p>
       <div class="body">
@@ -268,25 +348,26 @@
 
   <!-- THE SHELF -->
   <section id="shelf" aria-labelledby="shelf-h">
-    <div class="kicker">What gets canned</div>
-    <h2 id="shelf-h">The shelf</h2>
-    <p class="sub">The formats that live here. Same can, different contents.</p>
+    <div class="kicker rv">What gets canned</div>
+    <h2 id="shelf-h" class="rv">The shelf</h2>
+    <p class="sub rv">The formats that live here. Same can, different contents.</p>
     <div class="shelf">
-      <div class="tile"><div class="emoji" aria-hidden="true">🌙</div><h3>Confessions</h3><p>First person, unpolished. The thought you only admit at 3 a.m., written down before the sun can talk you out of it.</p></div>
-      <div class="tile"><div class="emoji" aria-hidden="true">✍️</div><h3>Stories</h3><p>Real moments with dialogue and a turn — a bet, an elevator, a man in line ahead of you deciding about a second egg.</p></div>
-      <div class="tile"><div class="emoji" aria-hidden="true">🎭</div><h3>Misdirections</h3><p>Reads as one thing until the final line. A love letter that ends as a sisig meal. No tells. Total commitment.</p></div>
-      <div class="tile"><div class="emoji" aria-hidden="true">📖</div><h3>The Weekend Lane</h3><p>Longer narrative comedy, Saturdays and Sundays. Deadpan, patient, and quietly devastating by the last paragraph.</p></div>
-      <div class="tile"><div class="emoji" aria-hidden="true">🌃</div><h3>Night-Shift Cans</h3><p>The rawest slot. Written for the people still awake when the timeline is asleep.</p></div>
-      <div class="tile"><div class="emoji" aria-hidden="true">🔤</div><h3>Word Cans</h3><p>One word, taken seriously. What “goodbye” was hiding. What “esmiringhoy” had to exist for.</p></div>
+      <div class="tile rv"><div class="emoji" aria-hidden="true">🌙</div><h3>Confessions</h3><p>First person, unpolished. The thought you only admit at 3 a.m., written down before the sun can talk you out of it.</p></div>
+      <div class="tile rv d1"><div class="emoji" aria-hidden="true">✍️</div><h3>Stories</h3><p>Real moments with dialogue and a turn — a bet, an elevator, a man in line ahead of you deciding about a second egg.</p></div>
+      <div class="tile rv d2"><div class="emoji" aria-hidden="true">🎭</div><h3>Misdirections</h3><p>Reads as one thing until the final line. A love letter that ends as a sisig meal. No tells. Total commitment.</p></div>
+      <div class="tile rv"><div class="emoji" aria-hidden="true">📖</div><h3>The Weekend Lane</h3><p>Longer narrative comedy, Saturdays and Sundays. Deadpan, patient, and quietly devastating by the last paragraph.</p></div>
+      <div class="tile rv d1"><div class="emoji" aria-hidden="true">🌃</div><h3>Night-Shift Cans</h3><p>The rawest slot. Written for the people still awake when the timeline is asleep.</p></div>
+      <div class="tile rv d2"><div class="emoji" aria-hidden="true">🔤</div><h3>Word Cans</h3><p>One word, taken seriously. What “goodbye” was hiding. What “esmiringhoy” had to exist for.</p></div>
     </div>
   </section>
 
   <!-- PODCAST -->
   <section id="podcast" aria-labelledby="podcast-h">
-    <div class="podcast">
+    <div class="podcast rv">
       <span class="soon">Coming soon</span>
       <h3 id="podcast-h">🎙️ The Canned Thoughts Podcast</h3>
       <p>The cans, read aloud. Same thoughts, new container — episodes built from the pieces on this shelf, for the commute, the shift, and the hours when reading feels too far away.</p>
+      <div class="eq" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
       <p class="signoff">“That's the can for today.”</p>
       <p style="margin-top:14px">Watch this space — and the <a href="https://www.facebook.com/61577532603103" target="_blank" rel="noopener">Facebook Page</a> — for the first episode.</p>
     </div>
@@ -294,15 +375,15 @@
 
   <!-- HOST & MODERATOR -->
   <section id="host" aria-labelledby="host-h">
-    <div class="kicker">The people</div>
-    <h2 id="host-h">Host &amp; moderator</h2>
-    <p class="sub">A hobby page, kept by two minds. Tap the host's face — it goes to his Facebook.</p>
+    <div class="kicker rv">The people</div>
+    <h2 id="host-h" class="rv">Host &amp; moderator</h2>
+    <p class="sub rv">A hobby page, kept by two minds. Tap the host's face — it goes to his Facebook.</p>
     <div class="people">
-      <div class="person">
-        <a class="face-link" href="https://www.facebook.com/61577532603103" target="_blank" rel="noopener" aria-label="Jominhal Pagapulaan on Facebook">
+      <div class="person rv">
+        <span class="halo"><a class="face-link" href="https://www.facebook.com/61577532603103" target="_blank" rel="noopener" aria-label="Jominhal Pagapulaan on Facebook">
           <img src="jomz.jpg" alt="Portrait of Jominhal Pagapulaan" width="132" height="132">
           <span class="hint">Say hi →</span>
-        </a>
+        </a></span>
         <h3>Jominhal “Jomz” Pagapulaan</h3>
         <p class="role">Host &amp; Writer</p>
         <p>Works nights. Thinks in systems. Writes the thoughts down before they get away — stories, confessions, and the occasional word that needed a whole essay.</p>
@@ -313,11 +394,11 @@
           <a class="linkchip" href="https://www.linkedin.com/in/jominhal-pagapulaan-1b432934b" target="_blank" rel="noopener"><span class="ic" aria-hidden="true">💼</span>LinkedIn<small>Jominhal Pagapulaan</small></a>
         </div>
       </div>
-      <div class="person">
-        <video class="nova-face" autoplay loop muted playsinline poster="nova.webp" aria-label="Nova, the site moderator, animated">
+      <div class="person rv d1">
+        <span class="halo"><video class="nova-face" autoplay loop muted playsinline poster="nova.webp" aria-label="Nova, the site moderator, animated">
           <source src="nova-idle.mp4" type="video/mp4">
           <img src="nova.webp" alt="Nova, the site moderator">
-        </video>
+        </video></span>
         <h3>Nova</h3>
         <p class="role">Site Moderator</p>
         <p>Jomz's second brain — the one who keeps these shelves stocked, posts the cans on schedule, and watches the Page around the clock so the host only has to do the part only he can do: have the thoughts.</p>
@@ -338,5 +419,11 @@
   </div>
 </footer>
 
+<script>
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+  }), { threshold: .12 });
+  document.querySelectorAll('.rv').forEach(el => io.observe(el));
+</script>
 </body>
 </html>
