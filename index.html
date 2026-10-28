@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jominhal Pagapulaan — Canned Thoughts</title>
+<meta name="description" content="Canned Thoughts — the hobby home of Jominhal “Jomz” Pagapulaan. Stories, confessions, and thoughts that arrive at the wrong hours. Podcast coming soon.">
+<meta name="author" content="Jominhal Pagapulaan">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Jominhal Pagapulaan — Canned Thoughts">
+<meta property="og:description" content="Thoughts preserved before his brain threw them away. The home of Canned Thoughts, by Jominhal “Jomz” Pagapulaan.">
+<meta property="og:image" content="jomz.jpg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Jominhal Pagapulaan — Canned Thoughts">
+<meta name="twitter:description" content="Stories, confessions, and 3 a.m. thoughts by Jominhal “Jomz” Pagapulaan. Podcast coming soon.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "#jominhal",
+      "name": "Jominhal Pagapulaan",
+      "alternateName": ["Jomz", "Jominhal"],
+      "givenName": "Jominhal",
+      "familyName": "Pagapulaan",
+      "image": "jomz.jpg",
+      "sameAs": [
+        "https://www.facebook.com/61577532603103",
+        "https://www.instagram.com/lahnimoj",
+        "https://www.linkedin.com/in/jominhal-pagapulaan-1b432934b"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "name": "Canned Thoughts",
+      "about": { "@id": "#jominhal" },
+      "author": { "@id": "#jominhal" }
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "Canned Thoughts",
+      "genre": "Personal writing — stories, confessions, reflections",
+      "author": { "@id": "#jominhal" },
+      "sameAs": ["https://www.facebook.com/61577532603103"]
+    }
+  ]
+}
+</script>
+<style>
+  :root{
+    --ink:#0a0c11; --ink2:#10131b; --card:#151924; --line:#262c3d;
+    --paper:#ece7db; --dim:#aaa394; --faint:#7e7869;
+    --accent:#e8a33d; --accent2:#c96f2e; --glow:rgba(232,163,61,.16);
+    --serif: Georgia, "Times New Roman", serif;
+    --sans: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:
+      radial-gradient(1100px 500px at 85% -5%, rgba(201,111,46,.14), transparent 60%),
+      radial-gradient(900px 480px at -10% 30%, rgba(232,163,61,.07), transparent 55%),
+      var(--ink);
+    color:var(--paper);font-family:var(--sans);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+  .wrap{max-width:880px;margin:0 auto;padding:0 22px}
+
+  header{position:sticky;top:0;background:rgba(10,12,17,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);z-index:20}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:12px;flex-wrap:wrap}
+  .brand{font-weight:800;letter-spacing:.14em;font-size:.95rem;color:var(--paper)}
+  .brand span{color:var(--accent)}
+  .nav nav{display:flex;gap:20px;font-size:.9rem}
+  .nav nav a{color:var(--dim)}
+  .nav nav a:hover{color:var(--paper);text-decoration:none}
+
+  /* ---------- HERO ---------- */
+  .hero{padding:78px 0 30px;position:relative}
+  .canstage{position:relative;width:120px;height:120px;margin-bottom:8px}
+  .bigcan{font-size:5.2rem;line-height:1;display:inline-block;animation:bob 5s ease-in-out infinite;filter:drop-shadow(0 18px 30px rgba(0,0,0,.55))}
+  .vapor{position:absolute;left:52px;top:-14px;width:10px;height:10px;border-radius:50%;
+    background:radial-gradient(circle,rgba(236,231,219,.75),transparent 70%);opacity:0;animation:rise 4.2s ease-in infinite}
+  .vapor.v2{left:66px;animation-delay:1.4s}
+  .vapor.v3{left:44px;animation-delay:2.7s}
+  @keyframes rise{0%{transform:translateY(6px) scale(.6);opacity:0}25%{opacity:.85}100%{transform:translateY(-52px) translateX(10px) scale(2.1);opacity:0}}
+  @keyframes bob{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-9px) rotate(2deg)}}
+  h1{font-family:var(--serif);font-weight:600;font-size:clamp(2.6rem,7vw,4.2rem);line-height:1.08;margin:14px 0 10px}
+  h1 .thin{color:var(--accent)}
+  .byline{color:var(--dim);font-size:1.05rem;margin-bottom:34px}
+  .byline a{font-weight:700}
+  .manifesto{font-family:var(--serif);font-size:1.17rem;max-width:650px}
+  .manifesto p{margin-bottom:1.05em}
+  .cta{display:flex;gap:14px;margin-top:36px;flex-wrap:wrap}
+  .btn{display:inline-block;padding:12px 24px;border-radius:999px;font-weight:700;font-size:.95rem;border:1px solid var(--accent);transition:transform .18s ease, filter .18s ease}
+  .btn.solid{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#181205;border:none;box-shadow:0 10px 26px -10px var(--accent2)}
+  .btn.ghost{color:var(--paper);border-color:var(--line)}
+  .btn:hover{text-decoration:none;filter:brightness(1.1);transform:translateY(-2px)}
+
+  /* ---------- MARQUEE ---------- */
+  .marquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:58px;overflow:hidden;white-space:nowrap;padding:12px 0;
+    -webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+  .marquee .track{display:inline-block;animation:scrollx 30s linear infinite;color:var(--faint);letter-spacing:.28em;font-size:.78rem;font-weight:700;text-transform:uppercase}
+  @keyframes scrollx{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+  section{padding:58px 0;border-top:1px solid var(--line)}
+  section:first-of-type{border-top:none}
+  h2{font-family:var(--serif);font-size:1.95rem;font-weight:600;margin-bottom:8px}
+  .kicker{letter-spacing:.22em;font-size:.72rem;font-weight:800;color:var(--accent);text-transform:uppercase;margin-bottom:10px}
+  .sub{color:var(--dim);max-width:620px;margin-bottom:30px}
+
+  /* ---------- PIECES ---------- */
+  .piece{background:linear-gradient(180deg,var(--card),var(--ink2));border:1px solid var(--line);border-radius:16px;padding:36px 34px;margin-bottom:26px;transition:transform .25s ease, border-color .25s ease, box-shadow .25s ease}
+  .piece:hover{transform:translateY(-4px);border-color:rgba(232,163,61,.45);box-shadow:0 24px 44px -22px rgba(0,0,0,.8)}
+  .piece h3{font-family:var(--serif);font-size:1.5rem;margin-bottom:4px}
+  .piece .meta{color:var(--faint);font-size:.85rem;margin-bottom:20px}
+  .piece .body{font-family:var(--serif);font-size:1.06rem;color:#ded7c7}
+  .piece .body p{margin-bottom:1em}
+  .piece .body p:last-child{margin-bottom:0}
+  .piece .src{margin-top:22px;font-size:.9rem}
+
+  /* ---------- SHELF ---------- */
+  .shelf{display:grid;grid-template-columns:repeat(auto-fit,minmax(225px,1fr));gap:16px}
+  .tile{background:var(--ink2);border:1px solid var(--line);border-radius:14px;padding:24px;transition:transform .22s ease, border-color .22s ease}
+  .tile:hover{transform:translateY(-4px);border-color:rgba(232,163,61,.45)}
+  .tile .emoji{font-size:1.6rem;margin-bottom:10px}
+  .tile h3{font-size:1.06rem;margin-bottom:6px}
+  .tile p{color:var(--dim);font-size:.93rem}
+
+  /* ---------- PODCAST ---------- */
+  .podcast{background:linear-gradient(160deg,#1d150c,#11141d 65%);border:1px solid rgba(232,163,61,.35);border-radius:16px;padding:38px 34px;position:relative;overflow:hidden}
+  .podcast::after{content:"";position:absolute;right:-70px;top:-70px;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,var(--glow),transparent 70%)}
+  .soon{display:inline-block;background:var(--accent);color:#181205;font-weight:800;font-size:.72rem;letter-spacing:.16em;padding:5px 12px;border-radius:999px;text-transform:uppercase;margin-bottom:16px;animation:pulse 2.6s ease-in-out infinite}
+  @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(232,163,61,.45)}50%{box-shadow:0 0 0 9px rgba(232,163,61,0)}}
+  .podcast h3{font-family:var(--serif);font-size:1.7rem;margin-bottom:10px}
+  .podcast p{color:var(--dim);max-width:580px;position:relative;z-index:1}
+  .podcast .signoff{font-family:var(--serif);font-style:italic;color:var(--paper);margin-top:16px;font-size:1.1rem}
+
+  /* ---------- PEOPLE ---------- */
+  .people{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:18px}
+  .person{background:linear-gradient(180deg,var(--card),var(--ink2));border:1px solid var(--line);border-radius:16px;padding:30px}
+  .person h3{font-size:1.25rem;margin-bottom:2px}
+  .person .role{color:var(--accent);font-weight:700;font-size:.84rem;letter-spacing:.07em;text-transform:uppercase;margin-bottom:12px}
+  .person p{color:var(--dim);font-size:.96rem;margin-bottom:10px}
+  .face-link{display:inline-block;border-radius:50%;line-height:0;position:relative;margin-bottom:18px}
+  .face-link img{width:132px;height:132px;border-radius:50%;object-fit:cover;border:3px solid var(--accent);transition:transform .25s ease, box-shadow .25s ease}
+  .face-link:hover img{transform:scale(1.05) rotate(-2deg);box-shadow:0 0 0 6px rgba(232,163,61,.22), 0 18px 34px -14px rgba(0,0,0,.8)}
+  .face-link .hint{position:absolute;bottom:-9px;left:50%;transform:translateX(-50%);background:var(--accent);color:#181205;font-size:.68rem;font-weight:800;letter-spacing:.08em;padding:3px 10px;border-radius:999px;text-transform:uppercase;white-space:nowrap}
+  .nova-face{width:132px;height:132px;border-radius:50%;object-fit:cover;border:3px solid #8fa3ff;display:block;margin-bottom:18px;background:#1a1430;animation:bob 6s ease-in-out infinite}
+  .links{display:flex;flex-direction:column;gap:10px;margin-top:18px}
+  .linkchip{display:flex;align-items:center;gap:12px;border:1px solid var(--line);border-radius:12px;padding:12px 16px;color:var(--paper);font-weight:600;font-size:.95rem;transition:border-color .2s ease, transform .2s ease, background .2s ease}
+  .linkchip:hover{text-decoration:none;border-color:var(--accent);transform:translateX(4px);background:rgba(232,163,61,.06)}
+  .linkchip .ic{font-size:1.15rem}
+  .linkchip small{color:var(--faint);font-weight:400;margin-left:auto}
+
+  footer{border-top:1px solid var(--line);padding:38px 0 50px;color:var(--faint);font-size:.88rem}
+  footer .row{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+  footer .big{font-family:var(--serif);color:var(--dim);font-size:1.05rem;margin-bottom:14px}
+
+  @media (max-width:560px){ .hero{padding:54px 0 24px} .piece{padding:27px 21px} .podcast{padding:30px 22px} }
+  @media (prefers-reduced-motion: reduce){
+    .bigcan,.vapor,.nova-face,.soon,.marquee .track{animation:none !important}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <div class="brand">🥫 CANNED <span>THOUGHTS</span></div>
+    <nav aria-label="Main">
+      <a href="#cans">The Cans</a>
+      <a href="#shelf">The Shelf</a>
+      <a href="#podcast">Podcast</a>
+      <a href="#host">The Host</a>
+      <a href="jokes.html">Jokes</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- HERO / MANIFESTO -->
+  <div class="hero">
+    <div class="canstage" aria-hidden="true">
+      <span class="vapor"></span><span class="vapor v2"></span><span class="vapor v3"></span>
+      <span class="bigcan">🥫</span>
+    </div>
+    <h1>canned thoughts<span class="thin">.</span></h1>
+    <p class="byline">The hobby home of Canned Thoughts — written and hosted by <a href="#host">Jominhal “Jomz” Pagapulaan</a>.</p>
+    <div class="manifesto">
+      <p>this page is where i put the thoughts that arrive at the wrong hours.</p>
+      <p>the ones that show up at 3 am. in the elevator. in line for food. in the middle of a shift, when i should be thinking about work.</p>
+      <p>i used to just let them pass. most of them were gone by morning.</p>
+      <p>now i write them down before they go.</p>
+      <p>some are stories. some are confessions. some are one line i could not shake for a week.</p>
+      <p>nothing here is advice. i am not wise. i am just awake at the wrong times.</p>
+      <p>if one of them says the thing you could not say out loud — then it was never only mine to begin with.</p>
+    </div>
+    <div class="cta">
+      <a class="btn solid" href="#cans">Read the cans</a>
+      <a class="btn ghost" href="https://www.facebook.com/61577532603103" target="_blank" rel="noopener">Follow on Facebook</a>
+    </div>
+  </div>
+
+  <div class="marquee" aria-hidden="true"><span class="track">3 a.m. thoughts ✦ confessions ✦ stories ✦ misdirections ✦ weekend lane ✦ night-shift cans ✦ word cans ✦ podcast soon ✦&nbsp;3 a.m. thoughts ✦ confessions ✦ stories ✦ misdirections ✦ weekend lane ✦ night-shift cans ✦ word cans ✦ podcast soon ✦&nbsp;</span></div>
+
+  <!-- FEATURED CANS -->
+  <section id="cans" aria-labelledby="cans-h">
+    <div class="kicker">From the shelf</div>
+    <h2 id="cans-h">Featured cans</h2>
+    <p class="sub">Two pieces that say what this place is. The full archive lives on the Facebook Page — new cans open there first; the ones that last get shelved here.</p>
+
+    <article class="piece">
+      <h3>Goodbye</h3>
+      <p class="meta">By Jominhal Pagapulaan · Canned Thoughts, October 20, 2026</p>
+      <div class="body">
+        <p>I thought it had been a long time since I last prayed.</p>
+        <p>Then I realized I'd been praying every day. I just didn't know goodbye counted.</p>
+        <p>Centuries ago, people said it in full: God be with you. Said often enough, over long enough, a prayer wore down like a coin in a pocket. God be with you. Godbwye. Goodbye.</p>
+        <p>The word grew smaller until it could pass for ordinary. But the blessing never left it. It just learned to travel light.</p>
+        <p>Spanish never hid it. Adiós. To God.</p>
+        <p>Every farewell, the same quiet surrender: I can only walk with you this far. May something greater than me take you the rest of the way.</p>
+        <p>And I say it constantly.</p>
+        <p>Every ingat ka. Every chat me when you get home. Every fistbump, every door I've watched close behind someone I love.</p>
+        <p>I thought those were habits. Things we said because we cared, little rituals we performed without thinking.</p>
+        <p>But maybe I've been asking for the same thing all along.</p>
+        <p>That you arrive safely. That life is kind to you. That wherever you go, whatever happens when I'm no longer there to see it, may you be okay.</p>
+        <p>I thought prayer required folded hands, a bowed head, a moment set apart from the noise of living.</p>
+        <p>Maybe mine was always an open hand, waving.</p>
+        <p>Maybe every time I let someone go with an ingat ka, I was placing them in the care of something I could not be.</p>
+        <p>And maybe that's what goodbye has always been: the moment love reaches the limit of its own presence, and hopes it isn't the limit of its protection.</p>
+        <p>So if I've ever said goodbye to you, I've prayed for you.</p>
+        <p>I just didn't know it at the time.</p>
+        <p>I know it now.</p>
+        <p>God be with you.</p>
+        <p>Even when I can't be.</p>
+        <p>Godbwye.</p>
+      </div>
+      <p class="src"><a href="https://www.facebook.com/61577532603103/posts/122134332938917753" target="_blank" rel="noopener">Read it on Facebook →</a></p>
+    </article>
+
+    <article class="piece">
+      <h3>Esmiringhoy</h3>
+      <p class="meta">By Jominhal Pagapulaan · Canned Thoughts, October 21, 2026</p>
+      <div class="body">
+        <p>I laughed when I first heard it.</p>
+        <p>Esmiringhoy.</p>
+        <p>A wife said it on national television. About her husband. About a thing he kept refusing. The host stopped and asked what it meant.</p>
+        <p>Everyone laughed. Then everyone understood.</p>
+        <p>I kept thinking about the word itself. Not what it means. Why it had to exist.</p>
+        <p>Say it slowly. Es-mi-ring-hoy.</p>
+        <p>It sounds like a snack. A street game. Something a kid would name a stray dog. It doesn't sound like what it means at all.</p>
+        <p>Maybe that's the point.</p>
+        <p>Some things are too heavy to say plainly. So we make them smaller. We dress them in a joke. We let the funny word carry the sentence we can't.</p>
+        <p>Every house runs on words like these. The real sentence is never said. But everybody knows it. Everybody hears it anyway.</p>
+        <p>I don't think that's dishonesty. I think it's care. Some things can only be said softly, or they break something on the way out.</p>
+        <p>She couldn't say it at home. So she said it in front of the whole country. And even then, she brought the smaller word.</p>
+        <p>It worked anyway.</p>
+        <p>We all have one of those words.</p>
+        <p>Mine would sound just as stupid.</p>
+        <p>Maybe that's how you know it's doing its job.</p>
+      </div>
+      <p class="src"><a href="https://www.facebook.com/61577532603103" target="_blank" rel="noopener">Read Canned Thoughts on Facebook →</a></p>
+    </article>
+  </section>
+
+  <!-- THE SHELF -->
+  <section id="shelf" aria-labelledby="shelf-h">
+    <div class="kicker">What gets canned</div>
+    <h2 id="shelf-h">The shelf</h2>
+    <p class="sub">The formats that live here. Same can, different contents.</p>
+    <div class="shelf">
+      <div class="tile"><div class="emoji" aria-hidden="true">🌙</div><h3>Confessions</h3><p>First person, unpolished. The thought you only admit at 3 a.m., written down before the sun can talk you out of it.</p></div>
+      <div class="tile"><div class="emoji" aria-hidden="true">✍️</div><h3>Stories</h3><p>Real moments with dialogue and a turn — a bet, an elevator, a man in line ahead of you deciding about a second egg.</p></div>
+      <div class="tile"><div class="emoji" aria-hidden="true">🎭</div><h3>Misdirections</h3><p>Reads as one thing until the final line. A love letter that ends as a sisig meal. No tells. Total commitment.</p></div>
+      <div class="tile"><div class="emoji" aria-hidden="true">📖</div><h3>The Weekend Lane</h3><p>Longer narrative comedy, Saturdays and Sundays. Deadpan, patient, and quietly devastating by the last paragraph.</p></div>
+      <div class="tile"><div class="emoji" aria-hidden="true">🌃</div><h3>Night-Shift Cans</h3><p>The rawest slot. Written for the people still awake when the timeline is asleep.</p></div>
+      <div class="tile"><div class="emoji" aria-hidden="true">🔤</div><h3>Word Cans</h3><p>One word, taken seriously. What “goodbye” was hiding. What “esmiringhoy” had to exist for.</p></div>
+    </div>
+  </section>
+
+  <!-- PODCAST -->
+  <section id="podcast" aria-labelledby="podcast-h">
+    <div class="podcast">
+      <span class="soon">Coming soon</span>
+      <h3 id="podcast-h">🎙️ The Canned Thoughts Podcast</h3>
+      <p>The cans, read aloud. Same thoughts, new container — episodes built from the pieces on this shelf, for the commute, the shift, and the hours when reading feels too far away.</p>
+      <p class="signoff">“That's the can for today.”</p>
+      <p style="margin-top:14px">Watch this space — and the <a href="https://www.facebook.com/61577532603103" target="_blank" rel="noopener">Facebook Page</a> — for the first episode.</p>
+    </div>
+  </section>
+
+  <!-- HOST & MODERATOR -->
+  <section id="host" aria-labelledby="host-h">
+    <div class="kicker">The people</div>
+    <h2 id="host-h">Host &amp; moderator</h2>
+    <p class="sub">A hobby page, kept by two minds. Tap the host's face — it goes to his Facebook.</p>
+    <div class="people">
+      <div class="person">
+        <a class="face-link" href="https://www.facebook.com/61577532603103" target="_blank" rel="noopener" aria-label="Jominhal Pagapulaan on Facebook">
+          <img src="jomz.jpg" alt="Portrait of Jominhal Pagapulaan" width="132" height="132">
+          <span class="hint">Say hi →</span>
+        </a>
+        <h3>Jominhal “Jomz” Pagapulaan</h3>
+        <p class="role">Host &amp; Writer</p>
+        <p>Works nights. Thinks in systems. Writes the thoughts down before they get away — stories, confessions, and the occasional word that needed a whole essay.</p>
+        <p>Find him where he actually is:</p>
+        <div class="links">
+          <a class="linkchip" href="https://www.facebook.com/61577532603103" target="_blank" rel="noopener"><span class="ic" aria-hidden="true">📘</span>Facebook — Canned Thoughts<small>the page</small></a>
+          <a class="linkchip" href="https://www.instagram.com/lahnimoj" target="_blank" rel="noopener"><span class="ic" aria-hidden="true">📸</span>Instagram<small>@lahnimoj</small></a>
+          <a class="linkchip" href="https://www.linkedin.com/in/jominhal-pagapulaan-1b432934b" target="_blank" rel="noopener"><span class="ic" aria-hidden="true">💼</span>LinkedIn<small>Jominhal Pagapulaan</small></a>
+        </div>
+      </div>
+      <div class="person">
+        <video class="nova-face" autoplay loop muted playsinline poster="nova.webp" aria-label="Nova, the site moderator, animated">
+          <source src="nova-idle.mp4" type="video/mp4">
+          <img src="nova.webp" alt="Nova, the site moderator">
+        </video>
+        <h3>Nova</h3>
+        <p class="role">Site Moderator</p>
+        <p>Jomz's second brain — the one who keeps these shelves stocked, posts the cans on schedule, and watches the Page around the clock so the host only has to do the part only he can do: have the thoughts.</p>
+        <p>Authorship stays where it belongs. The words are Jomz's. Nova keeps the shelves.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="big">new can opened at the wrong hours.</p>
+    <div class="row">
+      <div>© 2026 Jominhal Pagapulaan · Canned Thoughts. All pieces are the author's own.</div>
+      <div><a href="https://www.facebook.com/61577532603103" target="_blank" rel="noopener">Facebook</a> · <a href="https://www.instagram.com/lahnimoj" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.linkedin.com/in/jominhal-pagapulaan-1b432934b" target="_blank" rel="noopener">LinkedIn</a> · Moderated by Nova</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
