@@ -191,6 +191,69 @@
   @keyframes eqb{0%,100%{transform:scaleY(.55)}50%{transform:scaleY(1)}}
   .eq span{transform-origin:bottom}
 
+  /* ---------- THE FLOOR / CAM 01 ---------- */
+  .cctv{border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#070a0e;position:relative;box-shadow:0 30px 60px -30px rgba(0,0,0,.9)}
+  .cctv-bar{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 16px;background:#0b0f14;border-bottom:1px solid #1d2530;
+    font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.76rem;letter-spacing:.14em;color:#8fd8ab;text-transform:uppercase;flex-wrap:wrap}
+  .cctv-bar .rec{color:#ff5f56;font-weight:800;animation:blink 1.6s steps(1) infinite}
+  @keyframes blink{0%,55%{opacity:1}56%,100%{opacity:.15}}
+  .cctv-scene{position:relative;height:360px;background:
+    radial-gradient(ellipse at 50% -10%,rgba(95,208,165,.13),transparent 55%),
+    linear-gradient(180deg,#0d1218 0%,#0a0e13 62%,#080b0f 100%);overflow:hidden}
+  .cctv-scene::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:6;
+    background:repeating-linear-gradient(0deg,rgba(255,255,255,.028) 0 1px,transparent 1px 3px);mix-blend-mode:overlay}
+  .cctv-scene::before{content:"";position:absolute;inset:0;pointer-events:none;z-index:6;
+    background:radial-gradient(ellipse at center,transparent 55%,rgba(0,0,0,.5) 100%)}
+  .cctv-corner{position:absolute;width:26px;height:26px;border:2px solid rgba(143,216,171,.5);z-index:7;pointer-events:none}
+  .cctv-corner.tl{top:10px;left:10px;border-right:none;border-bottom:none}
+  .cctv-corner.tr{top:10px;right:10px;border-left:none;border-bottom:none}
+  .cctv-corner.bl{bottom:10px;left:10px;border-right:none;border-top:none}
+  .cctv-corner.br{bottom:10px;right:10px;border-left:none;border-top:none}
+  .cctv-stamp{position:absolute;left:16px;bottom:12px;z-index:8;font-family:ui-monospace,Menlo,Consolas,monospace;
+    font-size:.78rem;letter-spacing:.12em;color:#cfe9d8;text-shadow:0 1px 4px rgba(0,0,0,.9)}
+  .office{position:absolute;border:1px solid rgba(143,216,171,.35);background:rgba(20,28,24,.55);border-radius:10px;padding:10px 12px;z-index:3}
+  .office .otag{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.6rem;letter-spacing:.18em;color:#8fd8ab;text-transform:uppercase;margin-bottom:6px}
+  .boss{top:18px;right:18px;text-align:center;width:138px}
+  .boss img{width:62px;height:62px;border-radius:50%;object-fit:cover;border:2px solid rgba(232,163,61,.7);animation:bob 6s ease-in-out infinite}
+  .boss .bname{font-weight:800;font-size:.85rem;color:var(--paper);margin-top:4px}
+  .boss .brole{font-size:.68rem;color:var(--dim);letter-spacing:.08em;text-transform:uppercase}
+  .board{top:18px;left:18px;width:196px;font-size:.72rem;color:#cfe9d8;line-height:1.5}
+  .board b{color:#8fd8ab;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.62rem;letter-spacing:.16em;display:block;margin-bottom:4px}
+  .desk{position:absolute;z-index:3;text-align:center}
+  .desk .dtop{width:118px;height:12px;border-radius:6px;background:linear-gradient(180deg,#3a2c1c,#241a10);margin:0 auto;box-shadow:0 8px 14px rgba(0,0,0,.55)}
+  .agent{display:flex;flex-direction:column;align-items:center;animation:sway 4.6s ease-in-out infinite}
+  .agent .head{width:22px;height:22px;border-radius:50%;background:#d9b48c;border:2px solid rgba(0,0,0,.35)}
+  .agent .body{width:36px;height:24px;border-radius:11px 11px 5px 5px;margin-top:-3px}
+  .agent .tag{margin-top:7px;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.6rem;letter-spacing:.1em;color:#cfe9d8;
+    background:rgba(0,0,0,.55);border:1px solid rgba(143,216,171,.3);padding:2px 7px;border-radius:999px;text-transform:uppercase;white-space:nowrap}
+  .agent .stat{font-size:.66rem;color:#8fa398;margin-top:3px;max-width:150px}
+  @keyframes sway{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+  .regular{left:50%;bottom:64px;transform:translateX(-50%)}
+  .regular .body{background:linear-gradient(180deg,var(--amber),var(--ember))}
+  .typedots{display:inline-flex;gap:3px;margin-bottom:5px}
+  .typedots i{width:5px;height:5px;border-radius:50%;background:#8fd8ab;animation:eqb .9s ease-in-out infinite}
+  .typedots i:nth-child(2){animation-delay:.15s}.typedots i:nth-child(3){animation-delay:.3s}
+  .watcher{left:6%;bottom:64px}
+  .watcher .body{background:linear-gradient(180deg,#3f5bd6,#2b3f99)}
+  .watcher .monitors{display:flex;gap:4px;margin-bottom:5px}
+  .watcher .monitors i{width:20px;height:14px;border-radius:2px;background:linear-gradient(180deg,#1d3a2a,#122419);border:1px solid rgba(143,216,171,.45);animation:eqb 2.8s ease-in-out infinite}
+  .watcher .monitors i:nth-child(2){animation-delay:.5s}.watcher .monitors i:nth-child(3){animation-delay:1s}
+  .kapihan{position:absolute;right:18px;bottom:16px;z-index:3;border:1.5px dashed rgba(232,163,61,.45);border-radius:12px;padding:9px 12px 7px;background:rgba(30,22,10,.4);text-align:center}
+  .kapihan .ktag{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.6rem;letter-spacing:.18em;color:var(--amber);text-transform:uppercase;margin-bottom:5px}
+  .kapihan .pool{display:flex;gap:12px;justify-content:center}
+  .kapihan .agent .head{width:18px;height:18px}
+  .kapihan .agent .body{width:30px;height:20px}
+  .kapihan .agent .tag{font-size:.55rem}
+  .bubble{display:inline-block;background:rgba(242,236,221,.94);color:#221503;font-size:.72rem;font-weight:600;border-radius:10px;
+    padding:4px 10px;margin-bottom:7px;position:relative;transition:opacity .4s ease;max-width:210px}
+  .bubble::after{content:"";position:absolute;left:50%;bottom:-5px;transform:translateX(-50%);border:5px solid transparent;border-top-color:rgba(242,236,221,.94);border-bottom:none}
+  .cctv-toast{position:absolute;top:52px;left:50%;transform:translateX(-50%) translateY(-8px);z-index:9;opacity:0;transition:opacity .35s ease,transform .35s ease;
+    font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.7rem;letter-spacing:.14em;color:#ffd9d4;background:rgba(60,14,8,.82);
+    border:1px solid rgba(255,95,86,.6);padding:6px 14px;border-radius:8px;text-transform:uppercase;white-space:nowrap}
+  .cctv-toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+  .floor-note{color:var(--faint);font-size:.85rem;margin-top:14px;font-style:italic}
+  @media (max-width:700px){ .board{display:none} .cctv-scene{height:400px} .boss{width:118px} .watcher{left:3%} .regular{bottom:118px} .kapihan{right:50%;transform:translateX(50%);bottom:12px} }
+
   /* ---------- PEOPLE ---------- */
   .people{display:grid;grid-template-columns:repeat(auto-fit,minmax(295px,1fr));gap:18px}
   .person{background:linear-gradient(180deg,var(--card),var(--ink2));border:1px solid var(--line);border-radius:18px;padding:32px;transition:transform .25s ease,border-color .25s ease}
@@ -221,7 +284,7 @@
 
   @media (max-width:560px){ .hero{padding:52px 0 22px} .piece{padding:28px 22px} .podcast{padding:32px 24px} .manifesto{padding:22px} }
   @media (prefers-reduced-motion: reduce){
-    .can,.vapor,.nova-face,.soon,.marquee .track,.bgfx .aurora,.bgfx .mote,.floatchip,.eq span,.halo,h1 .grad{animation:none !important}
+    .can,.vapor,.nova-face,.soon,.marquee .track,.bgfx .aurora,.bgfx .mote,.floatchip,.eq span,.halo,h1 .grad,.agent,.typedots i,.watcher .monitors i,.cctv-bar .rec,.boss img{animation:none !important}
     .js .rv{opacity:1;transform:none;transition:none}
   }
 </style>
@@ -246,6 +309,7 @@
       <a href="#shelf">The Shelf</a>
       <a href="#podcast">Podcast</a>
       <a href="#host">The Host</a>
+      <a href="#floor">The Floor</a>
       <a href="jokes.html">Jokes</a>
     </nav>
   </div>
@@ -407,6 +471,78 @@
     </div>
   </section>
 
+  <!-- THE FLOOR / CAM 01 -->
+  <section id="floor" aria-labelledby="floor-h">
+    <div class="kicker rv">Behind the shelves</div>
+    <h2 id="floor-h" class="rv">The floor — CAM 01</h2>
+    <p class="sub rv">Every page has an office. This one has a camera. While the host is out having thoughts, the floor keeps the Page running — this is the team you'd see if you checked the CCTV.</p>
+
+    <div class="cctv rv" role="img" aria-label="A playful CCTV-style view of Nova's office floor: Nova in the boss office, one agent on a perpetual task, a watcher on patrol, and standby agents at the coffee corner.">
+      <div class="cctv-bar">
+        <span><span class="rec">● REC</span>&nbsp;&nbsp;CAM 01 — NOVA'S FLOOR</span>
+        <span id="cctv-clock">--:--:--</span>
+      </div>
+      <div class="cctv-scene">
+        <span class="cctv-corner tl"></span><span class="cctv-corner tr"></span><span class="cctv-corner bl"></span><span class="cctv-corner br"></span>
+        <div class="cctv-toast" id="cctv-toast">Motion detected</div>
+
+        <div class="office board" aria-hidden="true"><b>Floor rhythm</b>
+          Every day — fresh cans, made &amp; scheduled<br>
+          All day — the Page, patrolled<br>
+          Every night — the digest &amp; the 3 a.m. can<br>
+          Weekends — the Weekend Lane
+        </div>
+
+        <div class="office boss">
+          <div class="otag">Boss office</div>
+          <img src="nova.webp" alt="" width="62" height="62">
+          <div class="bname">NOVA</div>
+          <div class="brole">Floor manager · watching everything</div>
+        </div>
+
+        <div class="desk watcher">
+          <div class="agent">
+            <span class="monitors" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span class="head"></span><span class="body"></span>
+            <span class="tag">The Watcher · Patrol</span>
+            <span class="stat">Checks the Page on schedule. Reports only what's real.</span>
+          </div>
+          <div class="dtop"></div>
+        </div>
+
+        <div class="desk regular">
+          <div class="agent">
+            <span class="typedots" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span class="head"></span><span class="body"></span>
+            <span class="tag">The Regular · Perpetual task</span>
+            <span class="stat">Never clocks out. The cans get made here.</span>
+          </div>
+          <div class="dtop"></div>
+        </div>
+
+        <div class="kapihan">
+          <div class="bubble" id="chismis">wala pang task…</div>
+          <div class="pool">
+            <div class="agent"><span class="head"></span><span class="body" style="background:linear-gradient(180deg,#5fd0a5,#2f8f6d)"></span><span class="tag">Research</span></div>
+            <div class="agent" style="animation-delay:.7s"><span class="head"></span><span class="body" style="background:linear-gradient(180deg,#8fa3ff,#5a6fd0)"></span><span class="tag">Builder</span></div>
+            <div class="agent" style="animation-delay:1.3s"><span class="head"></span><span class="body" style="background:linear-gradient(180deg,#ff9ecb,#d16ba0)"></span><span class="tag">Runner</span></div>
+          </div>
+          <div class="ktag">Kapihan — standby pool</div>
+        </div>
+
+        <div class="cctv-stamp" id="cctv-stamp">—</div>
+      </div>
+    </div>
+
+    <div class="shelf" style="margin-top:22px">
+      <div class="tile rv"><div class="emoji" aria-hidden="true">🦉</div><h3>Nova — the boss</h3><p>Runs the floor from the glass office. Splits the work, checks the results, and only knocks on the host's door when it actually matters.</p></div>
+      <div class="tile rv d1"><div class="emoji" aria-hidden="true">⌨️</div><h3>The Regular</h3><p>The employee who's always there, because his task never ends: the daily cans — drafted, checked, and scheduled, every single day.</p></div>
+      <div class="tile rv d2"><div class="emoji" aria-hidden="true">👀</div><h3>The Watcher</h3><p>Patrols the Page on a schedule — comments, reactions, anything heating up — and reports back only what the receipts can prove.</p></div>
+      <div class="tile rv"><div class="emoji" aria-hidden="true">☕</div><h3>The standby pool</h3><p>Research, Builder, and Runner, holding coffee at the Kapihan. The moment the host asks for something, one of them is already walking to a desk.</p></div>
+    </div>
+    <p class="floor-note rv">A portrait of the ecosystem, not a live feed — but nobody on this floor ever really clocks out.</p>
+  </section>
+
 </main>
 
 <footer>
@@ -424,6 +560,38 @@
     if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
   }), { threshold: .12 });
   document.querySelectorAll('.rv').forEach(el => io.observe(el));
+
+  /* ---------- CAM 01 ---------- */
+  (function(){
+    const clock = document.getElementById('cctv-clock');
+    const stamp = document.getElementById('cctv-stamp');
+    if (!clock) return;
+    const tf = new Intl.DateTimeFormat('en-GB', { timeZone:'Asia/Manila', hour:'2-digit', minute:'2-digit', second:'2-digit', hour12:false });
+    const df = new Intl.DateTimeFormat('en-GB', { timeZone:'Asia/Manila', year:'numeric', month:'2-digit', day:'2-digit' });
+    function tick(){
+      const now = new Date();
+      clock.textContent = tf.format(now) + ' PHT';
+      stamp.textContent = df.format(now) + '  ' + tf.format(now) + '  CAM 01';
+    }
+    tick(); setInterval(tick, 1000);
+
+    const lines = ['wala pang task…', 'ready when Jomz is', 'kapihan muna ☕', 'the 3 a.m. can is canon', 'si boss, nanonood…', 'someone say “go”?'];
+    const bubble = document.getElementById('chismis');
+    let li = 0;
+    if (bubble) setInterval(() => {
+      bubble.style.opacity = 0;
+      setTimeout(() => { li = (li + 1) % lines.length; bubble.textContent = lines[li]; bubble.style.opacity = 1; }, 420);
+    }, 4200);
+
+    const alerts = ['Motion detected — Zone: Kapihan', 'Motion detected — Zone: Boss office', 'Audio spike — someone said “deploy”', 'Motion detected — Zone: Front desk', 'Unknown subject approaching the can shelf'];
+    const toast = document.getElementById('cctv-toast');
+    let ai = 0;
+    if (toast) setInterval(() => {
+      toast.textContent = alerts[ai % alerts.length]; ai++;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 3800);
+    }, 26000);
+  })();
 </script>
 </body>
 </html>
