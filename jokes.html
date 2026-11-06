@@ -10,7 +10,7 @@
 <style>
   :root{
     --ink:#08090f; --ink2:#0e1017; --card:#141824; --line:#272d40;
-    --paper:#f2ecdd; --dim:#b3ab99; --faint:#847d6d;
+    --paper:#f2ecdd; --dim:#b3ab99; --faint:#948b74;
     --amber:#e8a33d; --coral:#ff6a4d; --violet:#8fa3ff; --mint:#5fd0a5; --pink:#ff9ecb;
     --serif: Georgia, "Times New Roman", serif;
     --sans: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -33,7 +33,7 @@
   header{position:sticky;top:0;background:rgba(8,9,15,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);z-index:20}
   .nav{display:flex;align-items:center;justify-content:space-between;padding:10px 0;gap:12px;flex-wrap:wrap}
   .brand{font-weight:800;letter-spacing:.14em;font-size:.95rem;color:var(--paper)}
-  .brand span{background:linear-gradient(90deg,var(--amber),var(--coral));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .brand span{color:var(--coral)}
   .brand a{color:inherit}.brand a:hover{text-decoration:none}
   .nav nav{display:flex;gap:6px;font-size:.9rem;flex-wrap:wrap}
   .nav nav a{color:var(--dim);padding:10px 10px;border-radius:8px}
@@ -41,8 +41,7 @@
   .nav nav a[aria-current]{color:var(--paper)}
   main{padding:48px 0 72px}
   h1{font-family:var(--serif);font-size:clamp(2rem,6vw,3rem);line-height:1.15;font-weight:600}
-  h1 .grad{background:linear-gradient(92deg,var(--amber) 10%,var(--coral) 45%,var(--violet) 90%);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:hueflow 9s ease-in-out infinite alternate}
-  @keyframes hueflow{from{background-position:0% 0}to{background-position:100% 0}}
+  h1 .grad{color:var(--amber)}
   .sub{color:var(--dim);margin-top:12px;max-width:660px;font-size:1.03rem}
   .count{color:var(--faint);font-size:.9rem;margin-top:10px}
   .controls{margin:30px 0 8px;display:flex;flex-direction:column;gap:14px}
@@ -50,14 +49,14 @@
   .chip{--hue:var(--amber);font-family:var(--sans);font-size:.88rem;padding:9px 16px;border-radius:999px;border:1px solid var(--line);
     background:rgba(14,16,23,.7);color:var(--dim);cursor:pointer;min-height:44px;transition:all .18s ease}
   .chip:hover{color:var(--paper);border-color:var(--hue);transform:translateY(-1px)}
-  .chip.active{background:var(--hue);border-color:var(--hue);color:#171106;font-weight:700;box-shadow:0 8px 22px -8px var(--hue)}
+  .chip.active{background:var(--hue);border-color:var(--hue);color:#171106;font-weight:700;box-shadow:0 8px 22px -8px rgba(0,0,0,.6)}
   .row2{display:flex;gap:10px;flex-wrap:wrap}
   #search{flex:1;min-width:200px;background:rgba(14,16,23,.7);border:1px solid var(--line);border-radius:12px;
     color:var(--paper);padding:12px 15px;font-size:.95rem;min-height:44px}
   #search::placeholder{color:var(--faint)}
   #search:focus{border-color:var(--amber)}
   #randomBtn{background:linear-gradient(135deg,var(--amber),var(--coral));border:none;color:#221503;font-weight:700;border-radius:12px;
-    padding:12px 20px;font-size:.95rem;cursor:pointer;min-height:44px;transition:transform .18s ease, filter .18s ease;box-shadow:0 10px 26px -10px rgba(255,106,77,.55)}
+    padding:12px 20px;font-size:.95rem;cursor:pointer;min-height:44px;transition:transform .18s ease, filter .18s ease;box-shadow:0 10px 26px -10px rgba(0,0,0,.55)}
   #randomBtn:hover{filter:brightness(1.1);transform:translateY(-2px)}
   .grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:24px}
   @media(min-width:640px){.grid{grid-template-columns:1fr 1fr}}
