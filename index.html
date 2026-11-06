@@ -10,8 +10,12 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="Jominhal Pagapulaan — Canned Thoughts">
 <meta property="og:description" content="Thoughts preserved before his brain threw them away. The home of Canned Thoughts, by Jominhal “Jomz” Pagapulaan.">
-<meta property="og:image" content="jomz.jpg">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://jominhal.github.io/canned-thoughts/jomz.jpg">
+<meta property="og:url" content="https://jominhal.github.io/canned-thoughts/">
+<link rel="canonical" href="https://jominhal.github.io/canned-thoughts/">
+<meta name="theme-color" content="#08090f">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥫</text></svg>">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Jominhal Pagapulaan — Canned Thoughts">
 <meta name="twitter:description" content="Stories, confessions, and 3 a.m. thoughts by Jominhal “Jomz” Pagapulaan. Podcast coming soon.">
 <script>document.documentElement.classList.add('js')</script>
@@ -294,13 +298,45 @@
   footer .big{font-family:var(--serif);color:var(--dim);font-size:1.06rem;margin-bottom:14px}
 
   @media (max-width:560px){ .hero{padding:52px 0 22px} .piece{padding:28px 22px} .podcast{padding:32px 24px} .manifesto{padding:22px} }
+
+  /* ---------- FULL BEAST ADDITIONS ---------- */
+  button:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
+  .skip{position:absolute;left:16px;top:-60px;z-index:50;background:var(--amber);color:#221503;font-weight:700;
+    padding:10px 18px;border-radius:999px;transition:top .2s ease}
+  .skip:focus{top:12px;text-decoration:none}
+  .canbtn{background:none;border:none;padding:0;font:inherit;cursor:pointer;display:block;text-align:left}
+  .canstage.popped{animation:stagepop .55s cubic-bezier(.2,.7,.2,1)}
+  @keyframes stagepop{0%{transform:scale(1)}35%{transform:scale(1.05) rotate(-1.2deg)}70%{transform:scale(.985)}100%{transform:scale(1)}}
+  .canhint{font-family:var(--serif);font-style:italic;font-size:.98rem;color:var(--dim);margin-top:4px}
+  .canthought{font-family:var(--serif);font-style:italic;font-size:1.22rem;color:var(--paper);
+    min-height:1.7em;margin:-14px 0 30px;max-width:640px;transition:opacity .3s ease}
+  .sharerow{margin-top:16px}
+  .sharebtn{display:inline-flex;align-items:center;gap:9px;min-height:44px;padding:10px 20px;border-radius:999px;cursor:pointer;
+    border:1px solid var(--line);background:rgba(20,24,36,.5);color:var(--paper);font-weight:700;font-size:.9rem;font-family:var(--sans);
+    transition:border-color .2s ease, transform .2s ease, background .2s ease}
+  .sharebtn:hover{border-color:var(--amber);transform:translateY(-2px);background:rgba(232,163,61,.07)}
+  a.tile{display:block;color:inherit}
+  a.tile:hover{text-decoration:none}
+  .tile .go{display:block;margin-top:12px;font-size:.8rem;font-weight:700;letter-spacing:.06em;color:var(--hue)}
+  .oneword{background:linear-gradient(165deg,#0d1026,#0a0c18 70%);border:1px solid #2b3358;border-radius:18px;
+    padding:44px 36px;position:relative;overflow:hidden;text-align:left}
+  .oneword::after{content:"";position:absolute;right:-80px;bottom:-110px;width:300px;height:300px;border-radius:50%;
+    background:radial-gradient(circle,rgba(143,163,255,.14),transparent 70%)}
+  .oneword .when{color:var(--violet);font-size:.85rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:10px}
+  .oneword .word{font-family:var(--serif);font-weight:700;font-size:clamp(3rem,10vw,5.2rem);line-height:1.02;letter-spacing:-.01em;color:var(--paper)}
+  .oneword p{color:var(--dim);max-width:600px;margin-top:14px;position:relative;z-index:1}
+  .oneword .tonight{color:var(--faint);font-size:.9rem;margin-top:18px}
+  .watcher{animation:patrol 24s ease-in-out infinite}
+  @keyframes patrol{0%,100%{transform:translateX(0)}50%{transform:translateX(110px)}}
   @media (prefers-reduced-motion: reduce){
-    .can,.vapor,.nova-face,.soon,.marquee .track,.bgfx .aurora,.bgfx .mote,.floatchip,.eq span,.halo,h1 .grad,.agent,.typedots i,.watcher .monitors i,.cctv-bar .rec,.boss img{animation:none !important}
+    .can,.vapor,.nova-face,.soon,.marquee .track,.bgfx .aurora,.bgfx .mote,.floatchip,.eq span,.halo,h1 .grad,.agent,.typedots i,.watcher .monitors i,.cctv-bar .rec,.boss img,.canstage.popped,.watcher{animation:none !important}
     .js .rv{opacity:1;transform:none;transition:none}
   }
 </style>
 </head>
 <body>
+
+<a class="skip" href="#cans">Skip to the cans</a>
 
 <div class="bgfx" aria-hidden="true">
   <span class="aurora a1"></span><span class="aurora a2"></span><span class="aurora a3"></span>
@@ -319,6 +355,7 @@
       <a href="#cans">The Cans</a>
       <a href="#shelf">The Shelf</a>
       <a href="#podcast">Podcast</a>
+      <a href="#ritual">3 A.M.</a>
       <a href="#host">The Host</a>
       <a href="#floor">The Floor</a>
       <a href="jokes.html">Jokes</a>
@@ -334,13 +371,15 @@
     <span class="floatchip c2" aria-hidden="true">esmiringhoy.</span>
     <span class="floatchip c3" aria-hidden="true">3 a.m.</span>
     <span class="floatchip c4" aria-hidden="true">godbwye.</span>
-    <div class="canstage" aria-hidden="true">
-      <span class="vapor v1"></span><span class="vapor v2"></span><span class="vapor v3"></span>
-      <div class="can"><div class="label"><small>EST. 3 A.M.</small><b>CANNED<br>THOUGHTS</b></div></div>
-      <span class="shadow"></span>
-    </div>
+    <button class="canstage canbtn" id="canbtn" type="button" aria-label="Open a can — it serves a random line from the shelf">
+      <span class="vapor v1" aria-hidden="true"></span><span class="vapor v2" aria-hidden="true"></span><span class="vapor v3" aria-hidden="true"></span>
+      <span class="can" aria-hidden="true"><span class="label"><small>EST. 3 A.M.</small><b>CANNED<br>THOUGHTS</b></span></span>
+      <span class="shadow" aria-hidden="true"></span>
+    </button>
+    <p class="canhint" aria-hidden="true">↑ tap the can · may contain thoughts</p>
     <h1>canned <span class="grad">thoughts.</span></h1>
     <p class="byline">The hobby home of Canned Thoughts — written and hosted by <a href="#host">Jominhal “Jomz” Pagapulaan</a>.</p>
+    <p class="canthought" id="canthought" aria-live="polite">the can is sealed. for now.</p>
     <div class="manifesto rv">
       <p>this page is where i put the thoughts that arrive at the wrong hours.</p>
       <p>the ones that show up at 3 am. in the elevator. in line for food. in the middle of a shift, when i should be thinking about work.</p>
@@ -395,6 +434,7 @@
         <p>Godbwye.</p>
       </div>
       <p class="src"><a href="https://www.facebook.com/61577532603103/posts/122134332938917753" target="_blank" rel="noopener">Read it on Facebook →</a></p>
+      <p class="sharerow"><button class="sharebtn" type="button" data-share="https://www.facebook.com/61577532603103/posts/122134332938917753" data-title="Goodbye — Canned Thoughts">↗ Share this can</button></p>
     </article>
 
     <article class="piece rv">
@@ -420,6 +460,7 @@
         <p>Maybe that's how you know it's doing its job.</p>
       </div>
       <p class="src"><a href="https://www.facebook.com/61577532603103" target="_blank" rel="noopener">Read Canned Thoughts on Facebook →</a></p>
+      <p class="sharerow"><button class="sharebtn" type="button" data-share="https://www.facebook.com/61577532603103" data-title="Esmiringhoy — Canned Thoughts">↗ Share this can</button></p>
     </article>
   </section>
 
@@ -428,12 +469,12 @@
     <h2 id="shelf-h" class="rv">The shelf</h2>
     <p class="sub rv">The formats that live here. Same can, different contents.</p>
     <div class="shelf">
-      <div class="tile rv"><div class="emoji" aria-hidden="true">🌙</div><h3>Confessions</h3><p>First person, unpolished. The thought you only admit at 3 a.m., written down before the sun can talk you out of it.</p></div>
-      <div class="tile rv d1"><div class="emoji" aria-hidden="true">✍️</div><h3>Stories</h3><p>Real moments with dialogue and a turn — a bet, an elevator, a man in line ahead of you deciding about a second egg.</p></div>
-      <div class="tile rv d2"><div class="emoji" aria-hidden="true">🎭</div><h3>Misdirections</h3><p>Reads as one thing until the final line. A love letter that ends as a sisig meal. No tells. Total commitment.</p></div>
-      <div class="tile rv"><div class="emoji" aria-hidden="true">📖</div><h3>The Weekend Lane</h3><p>Longer narrative comedy, Saturdays and Sundays. Deadpan, patient, and quietly devastating by the last paragraph.</p></div>
-      <div class="tile rv d1"><div class="emoji" aria-hidden="true">🌃</div><h3>Night-Shift Cans</h3><p>The rawest slot. Written for the people still awake when the timeline is asleep.</p></div>
-      <div class="tile rv d2"><div class="emoji" aria-hidden="true">🔤</div><h3>Word Cans</h3><p>One word, taken seriously. What “goodbye” was hiding. What “esmiringhoy” had to exist for.</p></div>
+      <a class="tile rv" href="https://www.facebook.com/61577532603103" target="_blank" rel="noopener"><div class="emoji" aria-hidden="true">🌙</div><h3>Confessions</h3><p>First person, unpolished. The thought you only admit at 3 a.m., written down before the sun can talk you out of it.</p><span class="go">Opens on the Page →</span></a>
+      <a class="tile rv d1" href="https://www.facebook.com/61577532603103" target="_blank" rel="noopener"><div class="emoji" aria-hidden="true">✍️</div><h3>Stories</h3><p>Real moments with dialogue and a turn — a bet, an elevator, a man in line ahead of you deciding about a second egg.</p><span class="go">Opens on the Page →</span></a>
+      <a class="tile rv d2" href="https://www.facebook.com/61577532603103" target="_blank" rel="noopener"><div class="emoji" aria-hidden="true">🎭</div><h3>Misdirections</h3><p>Reads as one thing until the final line. A love letter that ends as a sisig meal. No tells. Total commitment.</p><span class="go">Opens on the Page →</span></a>
+      <a class="tile rv" href="https://www.facebook.com/61577532603103" target="_blank" rel="noopener"><div class="emoji" aria-hidden="true">📖</div><h3>The Weekend Lane</h3><p>Longer narrative comedy, Saturdays and Sundays. Deadpan, patient, and quietly devastating by the last paragraph.</p><span class="go">Opens on the Page →</span></a>
+      <a class="tile rv d1" href="https://www.facebook.com/61577532603103" target="_blank" rel="noopener"><div class="emoji" aria-hidden="true">🌃</div><h3>Night-Shift Cans</h3><p>The rawest slot. Written for the people still awake when the timeline is asleep.</p><span class="go">Opens on the Page →</span></a>
+      <a class="tile rv d2" href="https://www.facebook.com/61577532603103" target="_blank" rel="noopener"><div class="emoji" aria-hidden="true">🔤</div><h3>Word Cans</h3><p>One word, taken seriously. What “goodbye” was hiding. What “esmiringhoy” had to exist for.</p><span class="go">Opens on the Page →</span></a>
     </div>
   </section>
 
@@ -449,6 +490,18 @@
     </div>
   </section>
 
+  <!-- ONE WORD, 3 A.M. -->
+  <section id="ritual" aria-labelledby="ritual-h">
+    <h2 id="ritual-h" class="rv">One word, 3 a.m.</h2>
+    <p class="sub rv">The nightly ritual on the Facebook Page. One word, no explanation — and whatever it pulls out of the people still awake.</p>
+    <div class="oneword rv">
+      <div class="when">Tonight's word</div>
+      <div class="word" id="tonights-word">…</div>
+      <p>Every night at 3 a.m., a single word opens the floor on the Page. Some nights it's a door. Some nights it's a mirror. It is never just a word.</p>
+      <p class="tonight"><span id="tonights-date"></span> · <a href="https://www.facebook.com/61577532603103" target="_blank" rel="noopener">Be awake for it on the Page →</a></p>
+    </div>
+  </section>
+
   <!-- HOST & MODERATOR -->
   <section id="host" aria-labelledby="host-h">
     <h2 id="host-h" class="rv">Host &amp; moderator</h2>
@@ -456,7 +509,7 @@
     <div class="people">
       <div class="person rv">
         <span class="halo"><a class="face-link" href="https://www.facebook.com/61577532603103" target="_blank" rel="noopener" aria-label="Jominhal Pagapulaan on Facebook">
-          <img src="jomz.jpg" alt="Portrait of Jominhal Pagapulaan" width="132" height="132">
+          <img src="jomz.jpg" alt="Portrait of Jominhal Pagapulaan" width="132" height="132" loading="lazy">
           <span class="hint">Say hi →</span>
         </a></span>
         <h3>Jominhal “Jomz” Pagapulaan</h3>
@@ -505,7 +558,7 @@
 
         <div class="office boss">
           <div class="otag">Boss office</div>
-          <img src="nova.webp" alt="" width="62" height="62">
+          <img src="nova.webp" alt="" width="62" height="62" loading="lazy">
           <div class="bname">NOVA</div>
           <div class="brole">Floor manager · watching everything</div>
         </div>
@@ -570,6 +623,45 @@
     if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
   }), { threshold: .12 });
   document.querySelectorAll('.rv').forEach(el => io.observe(el));
+
+  /* ---------- THE CAN ---------- */
+  (function(){
+    const btn = document.getElementById('canbtn');
+    const slot = document.getElementById('canthought');
+    if (!btn || !slot) return;
+    const lines = ['ingat ka.','godbwye.','God be with you.','Maybe mine was always an open hand, waving.','nothing here is advice. i am not wise. i am just awake at the wrong times.','esmiringhoy.','some are stories. some are confessions. some are one line i could not shake for a week.','i used to just let them pass. most of them were gone by morning.','now i write them down before they go.','if one of them says the thing you could not say out loud — then it was never only mine to begin with.'];
+    let last = -1;
+    btn.addEventListener('click', () => {
+      let i; do { i = Math.floor(Math.random() * lines.length); } while (i === last && lines.length > 1);
+      last = i;
+      btn.classList.remove('popped'); void btn.offsetWidth; btn.classList.add('popped');
+      slot.style.opacity = 0;
+      setTimeout(() => { slot.textContent = lines[i]; slot.style.opacity = 1; }, 180);
+    });
+  })();
+
+  /* ---------- SHARE ---------- */
+  document.querySelectorAll('.sharebtn').forEach(b => {
+    b.addEventListener('click', async () => {
+      const url = b.getAttribute('data-share'), title = b.getAttribute('data-title');
+      if (navigator.share) { try { await navigator.share({ title, url }); } catch(e) {} return; }
+      try { await navigator.clipboard.writeText(url); const old = b.textContent; b.textContent = '✓ Link copied'; setTimeout(() => { b.textContent = old; }, 2200); }
+      catch(e) { window.open(url, '_blank', 'noopener'); }
+    });
+  });
+
+  /* ---------- ONE WORD, 3 A.M. ---------- */
+  (function(){
+    const el = document.getElementById('tonights-word');
+    if (!el) return;
+    const words = ['uwi','hintay','dasal','tulog','kape','ulan','yakap','paalam','balik','gutom','pagod','bintana','sulat','kamay','mata','awit','larawan','mesa','hagdan','liwanag','dilim','sweldo','trapiko','sinta','gabi','araw','tahimik','maingay','malayo','malapit','simula'];
+    const parts = new Intl.DateTimeFormat('en-GB', { timeZone:'Asia/Manila', year:'numeric', month:'numeric', day:'numeric' }).formatToParts(new Date());
+    const pv = {}; parts.forEach(p => pv[p.type] = p.value);
+    const days = Math.floor(Date.UTC(+pv.year, +pv.month - 1, +pv.day) / 86400000);
+    el.textContent = words[days % words.length];
+    const dEl = document.getElementById('tonights-date');
+    if (dEl) dEl.textContent = new Intl.DateTimeFormat('en-GB', { timeZone:'Asia/Manila', weekday:'long', day:'numeric', month:'long' }).format(new Date());
+  })();
 
   /* ---------- CAM 01 ---------- */
   (function(){
